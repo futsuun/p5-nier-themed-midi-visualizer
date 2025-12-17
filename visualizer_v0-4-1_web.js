@@ -649,7 +649,7 @@ function setup(){
   textLeading(20);
   
   text(`MIDI file MUST be a Type 0 Midi File (all tracks merged into a single MIDI track)\n
-Ensure MIDI file is exported with tempo embedded\n
+Ensure MIDI file is exported with tempo embedded (if no tempo is detected, there will be a pop-up asking for BPM input)\n
 Tempo changes are okay, but do note that EXCESSIVE tempo changes will cause the visualizer FPS to drop drastically\n
 Visualizer is unable to handle changes in time signature during the track (it will only take the first time signature it sees and ignore the rest);
 it may still work to some degree but try at your own risk!`, menuAlignX+40, menuFooterY+345);
