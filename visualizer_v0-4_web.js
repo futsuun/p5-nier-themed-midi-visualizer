@@ -16,7 +16,7 @@ let alignX = 20
 let alignY = 20
 let fontSize = 16
 let titleTextSize = 30 //size of song title
-let ppqn = 960 //parts per quarter note
+let ppqn //parts per quarter note
 let timeInBar //time for one bar to complete in seconds
 let timeInBarMidi //msg time for one bar
 let totalTimeMidi = 0 //time in ppqn summed up
@@ -87,6 +87,7 @@ function handleMidiArray(buffer) {
   midiArrayRaw = MidiParser.parse(buffer);   // raw MIDI bytes
      
   if(midiArrayRaw.formatType === 0){
+    ppqn = midiArrayRaw.timeDivision;
     midiData = midiExtract(midiArrayRaw);
     midiProcess(midiData);
     isTypeZero = true;
